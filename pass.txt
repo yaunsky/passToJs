@@ -1,0 +1,7 @@
+admin
+password
+123456
+111111
+000000
+aaaaaa
+1234qwer
