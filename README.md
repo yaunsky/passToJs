@@ -382,6 +382,7 @@ function binb2hex(binarray, hexcase) {
 
 **添加批量加密功能**
 
+
 def Encode(jsfile, username, passfile):
     print("[+] 正在进行加密，请稍后......")
     with open (jsfile,'r') as strjs:
@@ -400,14 +401,14 @@ def Encode(jsfile, username, passfile):
 
 **优化单个密码加密功能**
 
-​    def passstring(jsfile, username, password):
-​    print("[+] 正在进行加密，请稍后......")
-​    with open (jsfile,'r') as strjs:
-​        src = strjs.read()
-​        phantom = execjs.get('PhantomJS')	#调用JS依赖环境
-​        getpass = phantom.compile(src)	#编译执行js脚本
-​        mypass = getpass.call('encrypt', username, password)	#传递参数
-​        print("\033[1;33;40m[+] 加密完成:{}".format(mypass))
+ def passstring(jsfile, username, password):
+    print("[+] 正在进行加密，请稍后......")
+    with open (jsfile,'r') as strjs:
+        src = strjs.read()
+        phantom = execjs.get('PhantomJS')	#调用JS依赖环境
+        getpass = phantom.compile(src)	#编译执行js脚本
+        mypass = getpass.call('encrypt', username, password)	#传递参数
+        print("\033[1;33;40m[+] 加密完成:{}".format(mypass))
 
 项目中有些情境下，通过其他条件，已经知道了系统中的默认密码，然后去爆破系统中的其他用户名进行登陆系统，这时候就需要遍历用户名，但是默认密码也是需要加密使用的。所以提供某个密码进行单独加密。
 
