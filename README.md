@@ -383,8 +383,9 @@ function binb2hex(binarray, hexcase) {
 **添加批量加密功能**
 
 def Encode(jsfile, username, passfile):
-    print("[+] 正在进行加密，请稍后......")
-    with open (jsfile,'r') as strjs:
+
+print("[+] 正在进行加密，请稍后......")
+		with open (jsfile,'r') as strjs:
         src = strjs.read()
         phantom = execjs.get('PhantomJS')	#调用JS依赖环境
         getpass = phantom.compile(src)	#编译执行js脚本
